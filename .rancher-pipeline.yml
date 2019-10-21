@@ -3,7 +3,7 @@ stages:
   steps:
   - runScriptConfig:
       image: gcc:latest
-      shellScript: cmake install
+      shellScript: gcc install
 - name: publish
   steps:
   - publishImageConfig:
