@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: helloworld-service
+  name: demo-service
 spec:
   selector:
-    app: helloworld
+    app: demoapp
   type: NodePort
   ports:
     - protocol: TCP
@@ -14,18 +14,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-helloworld
+  name: demo-app
   labels:
-    app: helloworld
+    app: demoapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: helloworld
+      app: demoapp
   template:
     metadata:
       labels:
-        app: helloworld
+        app: demoapp
     spec:
       imagePullSecrets:
       - name: pipeline-docker-registry
