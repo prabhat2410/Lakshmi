@@ -2,8 +2,8 @@ stages:
 - name: compile
   steps:
   - runScriptConfig:
-      image: maven:3-jdk-8
-      shellScript: mvn install
+      image: gcc:latest
+      shellScript: cmake install
 - name: publish
   steps:
   - publishImageConfig:
